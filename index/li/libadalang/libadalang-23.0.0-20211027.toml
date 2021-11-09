@@ -1,0 +1,29 @@
+name = "libadalang"
+description = "Ada semantic analysis library"
+version = "23.0.0-20211027"
+
+authors = ["AdaCore"]
+maintainers = ["Pierre-Marie de Rodat <pmderodat@kawie.fr>"]
+maintainers-logins = ["pmderodat"]
+licenses = "GPL-3.0-only WITH GCC-exception-3.1"
+website = "https://github.com/AdaCore/libadalang"
+tags = ["libadalang", "static-analysis"]
+project-files = ["build/libadalang.gpr"]
+
+[origin]
+url = "git+https://github.com/AdaCore/libadalang"
+commit = "dbdb4161d7166a31fd159195d66c8f90f7c7e67e"
+
+[environment]
+VIRTUAL_ENV.set= "${CRATE_ROOT}/env"
+PATH.prepend = "${CRATE_ROOT}/env/bin"
+
+[[actions]]
+type = "post-fetch"
+command = ["bash", "-c", "-x", "ln -s -v $LANGKIT_DIR langkit; python3 -mvenv env; pip install -r REQUIREMENTS.dev; python manage.py generate"]
+
+[[depends-on]]
+gnatcoll = "^22"
+gnatcoll_gmp = "^22"
+gnatcoll_iconv = "^22"
+langkit_support = "23.0.0-20211027"

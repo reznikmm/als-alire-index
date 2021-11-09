@@ -1,0 +1,23 @@
+name = "langkit_support"
+description = "Runtime support library for Langkit-generated libraries"
+version = "23.0.0-20211027"
+
+authors = ["AdaCore"]
+maintainers = ["Pierre-Marie de Rodat <pmderodat@kawie.fr>"]
+maintainers-logins = ["pmderodat"]
+licenses = "GPL-3.0-only WITH GCC-exception-3.1"
+website = "https://github.com/AdaCore/langkit"
+
+project-files = ["support/langkit_support.gpr"]
+
+[origin]
+url = "git+https://github.com/AdaCore/langkit"
+commit = "d79dfd3cbc3325185e3f5d3a04cc495d76546198"
+
+[environment]
+LANGKIT_DIR.set= "${CRATE_ROOT}"
+
+[[depends-on]]
+gnatcoll = "^22"
+gnatcoll_iconv = "^22"
+gnatcoll_gmp = "^22"
