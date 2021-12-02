@@ -20,7 +20,7 @@ alr get --build ada_language_server
 After a successful build you will get `ada_language_server` executable:
 
 ```
-# ls -l ada_language_server_23.0.1_7cc30d32/.obj/server/ada_language_server 
+# ls -l ada_language_server_23.0.*/.obj/server/ada_language_server 
 -rwxr-xr-x 1 root root 114655496 Nov  9 11:47 ada_language_server_23.0.1_7cc30d32/.obj/server/ada_language_server
 ```
 
