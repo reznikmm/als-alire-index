@@ -1,0 +1,20 @@
+name = "libadalang_tools"
+description = "Ada semantic analysis library extension and tools"
+version = "23.0.0-20220503"
+
+authors = ["AdaCore"]
+maintainers = ["Pierre-Marie de Rodat <pmderodat@kawie.fr>"]
+maintainers-logins = ["pmderodat"]
+licenses = "GPL-3.0-only WITH GCC-exception-3.1"
+website = "https://github.com/AdaCore/libadalang-tools"
+tags = ["libadalang", "static-analysis"]
+project-files = ["src/lal_tools.gpr", "src/build.gpr"]
+executables = ["gnatmetric", "gnatpp", "gnatstub", "gnattest"]
+
+[origin]
+url = "git+https://github.com/AdaCore/libadalang-tools"
+commit = "7ec4c7b7a49b0c9e7e22926fa4cc77fb7dc04ab2"
+
+[[depends-on]]
+libadalang = "23.0.0-20220503"
+templates_parser = "*"
