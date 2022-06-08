@@ -1,0 +1,34 @@
+name = "libgpr2"
+description = "Parser for GPR Project files"
+version = "23.0.0-20220608"
+
+authors = ["AdaCore"]
+maintainers = ["Maxim Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "GPL-3.0-only WITH GCC-exception-3.1"
+website = "https://github.com/AdaCore/gpr"
+tags = ["gpr", "static-analysis"]
+project-files = ["gpr2.gpr"]
+
+[origin]
+url = "git+https://github.com/AdaCore/gpr"
+commit = "45afc3fb4cd7cbf0efb996af49e4d39af3b4a3c1"
+
+[environment]
+PATH.prepend = "${CRATE_ROOT}/env/bin"
+
+[[actions]]
+type = "post-fetch"
+command = ["git", "clone", "https://github.com/AdaCore/gprconfig_kb.git"]
+
+[[actions]]
+type = "post-fetch"
+command = ["sed", "-i", "-E", "-e", "s/\\b(X?)BUILD\\b/\\1GPR2_BUILD/g", "Makefile", "gpr2.gpr", "bindings/c/gpr2-c.gpr"]
+
+[[actions]]
+type = "post-fetch"
+command = ["bash", "-c", "-x", "python3 -mvenv env; export VIRTUAL_ENV=$PWD/env PATH=$PWD/env/bin:$PATH; pip install $LANGKIT_DIR/; make setup .build/lkparser .build/kb/config.kb GPR2KBDIR=./gprconfig_kb/db"]
+
+[[depends-on]]
+gnatcoll = "*"
+langkit_support = "23.0.0-20220608"
