@@ -16,4 +16,4 @@ commit = "dfa0adc12e565afaf9531b7086d324e84ceb88d9"
 url = "git+https://github.com/AdaCore/markdown.git"
 
 [[depends-on]]
-vss = "23.0.0-20220721"
+vss = ">=23.0.0-20220721"
