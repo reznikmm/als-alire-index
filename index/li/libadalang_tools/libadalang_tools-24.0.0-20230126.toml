@@ -1,6 +1,6 @@
 name = "libadalang_tools"
 description = "Ada semantic analysis library extension and tools"
-version = "24.0.0-20230124"
+version = "24.0.0-20230126"
 
 authors = ["AdaCore"]
 maintainers = ["Pierre-Marie de Rodat <pmderodat@kawie.fr>"]
@@ -13,8 +13,8 @@ executables = ["gnatmetric", "gnatpp", "gnatstub", "gnattest"]
 
 [origin]
 url = "git+https://github.com/AdaCore/libadalang-tools"
-commit = "8d1f4aed6af8bcd16443e00030f28e9307c08066"
+commit = "28a836398ab77728ca172f31bea39a1662316416"
 
 [[depends-on]]
-libadalang = "24.0.0-20230124"
+libadalang = "24.0.0-20230126"
 templates_parser = "*"

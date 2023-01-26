@@ -1,6 +1,6 @@
 name = "libgpr2"
 description = "Parser for GPR Project files"
-version = "24.0.0-20230124"
+version = "24.0.0-20230126"
 
 authors = ["AdaCore"]
 maintainers = ["Maxim Reznik <reznikmm@gmail.com>"]
@@ -31,4 +31,4 @@ command = ["bash", "-c", "-x", "python3 -mvenv env; export VIRTUAL_ENV=$PWD/env 
 
 [[depends-on]]
 gnatcoll = "*"
-langkit_support = "24.0.0-20230124"
+langkit_support = "24.0.0-20230126"

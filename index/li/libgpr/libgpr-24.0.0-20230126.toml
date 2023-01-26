@@ -1,5 +1,5 @@
 name = "libgpr"
-version = "24.0.0-20230124"
+version = "24.0.0-20230126"
 description = "GNAT Project File Library"
 authors = ["AdaCore"]
 licenses = "GPL-3.0-or-later WITH GCC-exception-3.1"

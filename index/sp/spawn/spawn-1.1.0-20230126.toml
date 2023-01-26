@@ -1,7 +1,7 @@
 name = "spawn"
 description = "A simple library to spawn processes and communicate with them."
 long-description = "This is Glib indepentent implementation of a spawn processes interface."
-version = "1.1.0-20230124"
+version = "1.1.0-20230126"
 website = "https://github.com/reznikmm/spawn"
 authors = ["AdaCore", "Max Reznik"]
 licenses = "GPL-3.0-only WITH GCC-exception-3.1"

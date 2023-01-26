@@ -13,14 +13,14 @@ tags = ["lsp", "vscode"]
 ADA_PROJECT_PATH.set= "${CRATE_ROOT}/subprojects/stubs"
 
 [[depends-on]]
-gnatcoll         = "24.0.0-20230124"
-libadalang       = "24.0.0-20230124"
-libgpr2          = "24.0.0-20230124"
-vss              = "24.0.0-20230124"
-libadalang_tools = "24.0.0-20230124"
-gnatdoc          = "24.0.0-20230124"
-spawn            =  "1.1.0-20230124"
+gnatcoll         = "24.0.0-20230126"
+libadalang       = "24.0.0-20230126"
+libgpr2          = "24.0.0-20230126"
+vss              = "24.0.0-20230126"
+libadalang_tools = "24.0.0-20230126"
+gnatdoc          = "24.0.0-20230126"
+spawn            =  "1.1.0-20230126"
 
 [origin]
 url = "git+https://github.com/AdaCore/ada_language_server"
-commit = "0cd96694d4cb4f148d535b50f3bf61b523ef4792"
+commit = "eb7d6cb430dcfba71f9f3b54d5ed7bc2937ef93d"

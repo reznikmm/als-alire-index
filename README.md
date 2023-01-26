@@ -14,7 +14,9 @@ alr index --reset-community
 alr index --add file://$PWD/als-alire-index --name als
 # Choose gnat_native=11.2 or gnat_external=2021.0.0
 alr toolchain --select
-alr get --build ada_language_server
+alr get ada_language_server
+cd ada_language_server*
+alr build -- -gnatwn
 ```
 
 After a successful build you will get `ada_language_server` executable:

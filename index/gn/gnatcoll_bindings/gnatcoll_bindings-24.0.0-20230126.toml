@@ -1,5 +1,5 @@
 name = "gnatcoll_bindings"
-version = "24.0.0-20230124"
+version = "24.0.0-20230126"
 description = "GNAT Components Collection - GNU Multiple Precision Arithmetic binding"
 website = "https://github.com/adacore/gnatcoll-bindings"
 authors = ["AdaCore"]
@@ -20,7 +20,7 @@ LIBRARY_TYPE = ["static", "relocatable", "static-pic"]
 linux   = { GNATCOLL_ICONV_OPT.set = "-L." }
 
 [[depends-on]]
-gnatcoll = "24.0.0-20230124"
+gnatcoll = "24.0.0-20230126"
 libgmp = "*"
 
 [origin]

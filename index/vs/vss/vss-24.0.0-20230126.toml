@@ -1,6 +1,6 @@
 name = "vss"
 description = "Advanced string and text manipulation with Unicode support"
-version = "24.0.0-20230124"
+version = "24.0.0-20230126"
 tags = ["unicode", "json", "text"]
 
 authors = ["AdaCore"]
@@ -12,7 +12,7 @@ website = "https://github.com/AdaCore/VSS"
 project-files = ["gnat/vss_text.gpr", "gnat/vss_json.gpr", "gnat/vss_regexp.gpr"]
 
 [origin]
-commit = "efb8052f0a4f4831632dedf362f161fc2f7978d3"
+commit = "6c933844bafaed6a986f7a5e948df9d9714ade13"
 url = "git+https://github.com/AdaCore/VSS.git"
 
 [[depends-on]]

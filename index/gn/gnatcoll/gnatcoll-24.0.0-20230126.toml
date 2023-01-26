@@ -1,5 +1,5 @@
 name = "gnatcoll"
-version = "24.0.0-20230124"
+version = "24.0.0-20230126"
 description = "GNAT Components Collection - Core packages"
 website = "https://github.com/adacore/gnatcoll-core"
 authors = ["AdaCore"]
@@ -29,7 +29,7 @@ GNATCOLL_OS = "windows"
 GNATCOLL_VERSION = "24.0.0"
 
 [[depends-on]]
-libgpr = "24.0.0-20230124"
+libgpr = "24.0.0-20230126"
 
 [origin]
 url = "git+https://github.com/AdaCore/gnatcoll-core.git"
