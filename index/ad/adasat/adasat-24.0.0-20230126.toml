@@ -1,0 +1,17 @@
+name = "adasat"
+description = "Implementation of a DPLL-based SAT solver in Ada."
+version = "24.0.0-20230126"
+
+authors = ["AdaCore"]
+maintainers = ["Beguet Romain <beguet@adacore.com>"]
+maintainers-logins = ["Roldak"]
+licenses = "Apache-2.0"
+website = "https://github.com/AdaCore/AdaSAT"
+tags = ["solver", "sat", "dpll"]
+
+[origin]
+url = "git+https://github.com/AdaCore/AdaSAT"
+commit = "9314120fa83888e532a94406057f607a4c662bf0"
+
+[environment]
+ADASAT_DIR.set= "${CRATE_ROOT}"
