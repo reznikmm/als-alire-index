@@ -20,7 +20,7 @@ LIBRARY_TYPE = ["static", "relocatable", "static-pic"]
 linux   = { GNATCOLL_ICONV_OPT.set = "-L." }
 
 [[depends-on]]
-gnatcoll = "24.0.0-20230126"
+gnatcoll = ">=24.0.0-20230126"
 libgmp = "*"
 
 [origin]
