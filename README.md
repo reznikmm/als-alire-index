@@ -1,10 +1,10 @@
 # als-alire-index
 
-> An Alire index to build ada_language_server
+> An Alire index to build ada_language_server, lsif-ada
 
-This alire index provides the `ada_language_server` crate
-and its dependenties not included in the community index
-yet.
+This alire index provides the `ada_language_server`,
+`lsif_ada` crates
+and dependenties not included in the community index yet.
 
 ## Install
 
@@ -12,10 +12,11 @@ yet.
 git clone https://github.com/reznikmm/als-alire-index.git
 alr index --reset-community
 alr index --add file://$PWD/als-alire-index --name als
-# Choose gnat_native=11.2 or gnat_external=2021.0.0
+# Choose gnat_native=12.2
 alr toolchain --select
 alr get ada_language_server
 cd ada_language_server*
+# export LIBRARY_TYPE=static
 alr build -- -gnatwn
 ```
 
@@ -33,6 +34,17 @@ Make sure you have [`alr`](https://alire.ada.dev/), `wget`, `curl`, `git`, `libg
 ```
 apt install wget curl git libgmp-dev python3 python3-venv python3-pip
 ```
+
+## One line installer for `lsif-ada`
+
+This script builds [`lsif-ada`](https://github.com/AdaCore/lsif-ada) 
+and installs it into the current directory.
+It supposes next packages are already installed:
+
+    sudo apt install -y \
+      python3 curl unzip git libgmp-dev libc6-dev make python3-pip python3-venv
+
+    curl -fsSL https://raw.githubusercontent.com/reznikmm/als-alire-index/main/make_lsif.sh | bash
 
 ## Build on Mac OS X High Sierra
 

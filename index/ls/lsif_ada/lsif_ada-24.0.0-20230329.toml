@@ -1,0 +1,20 @@
+name = "lsif_ada"
+description = "Language Server Indexing Format (LSIF) generator for Ada"
+version = "24.0.0-20230329"
+
+authors = ["AdaCore"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+project-files = ["gnat/lsif.gpr"]
+
+[configuration]
+disabled = true
+
+[[depends-on]]
+libgpr2 = "^24.0.0-20230322"
+gnatdoc = "^24.0.0-20230322"
+
+[origin]
+url = "git+https://github.com/AdaCore/lsif-ada"
+commit = "55a70b8c028830fe21b076e6091a7b7313cca8df"
+
