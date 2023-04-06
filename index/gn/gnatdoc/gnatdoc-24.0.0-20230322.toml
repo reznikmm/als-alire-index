@@ -18,6 +18,6 @@ url = "git+https://github.com/AdaCore/gnatdoc.git"
 [[depends-on]]
 gnat = ">=2020|(>=11 & <=2000)"
 
-markdown         = "24.0.0-20221229"
-libadalang       = "24.0.0-20230322"
-vss              = "24.0.0-20230322"
+markdown         = ">=24.0.0-20221229"
+libadalang       = ">=24.0.0-20230322"
+vss              = ">=24.0.0-20230322"
