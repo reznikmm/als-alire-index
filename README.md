@@ -35,6 +35,12 @@ Make sure you have [`alr`](https://alire.ada.dev/), `wget`, `curl`, `git`, `libg
 apt install wget curl git libgmp-dev python3 python3-venv python3-pip
 ```
 
+## GCC 13.1 preview
+
+You can install `gnat_native` of GCC 13.1 with the next commant:
+
+    alr toolchain --select gnat_native=13.1.1
+
 ## One line installer for `lsif-ada`
 
 This script builds [`lsif-ada`](https://github.com/AdaCore/lsif-ada) 
