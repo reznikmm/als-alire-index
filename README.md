@@ -9,13 +9,14 @@ and dependenties not included in the community index yet.
 ## Install
 
 ```
-git clone https://github.com/reznikmm/als-alire-index.git
 alr index --reset-community
-alr index --add file://$PWD/als-alire-index --name als
+alr index --add https://github.com/reznikmm/als-alire-index.git --name als
 # Choose gnat_native=12.2
 alr toolchain --select
 alr get ada_language_server
 cd ada_language_server*
+# Temporary an Alire issue workaround:
+git -C alire/cache/dependencies/vss*/ checkout config/vss_config.gpr
 # export LIBRARY_TYPE=static
 alr build -- -gnatwn
 ```
