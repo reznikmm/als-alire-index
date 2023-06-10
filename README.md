@@ -10,7 +10,7 @@ and dependenties not included in the community index yet.
 
 ```
 alr index --reset-community
-alr index --add https://github.com/reznikmm/als-alire-index.git --name als
+alr index --add git+https://github.com/reznikmm/als-alire-index.git --name als
 # Choose gnat_native=12.2
 alr toolchain --select
 alr get ada_language_server
@@ -18,6 +18,11 @@ cd ada_language_server*
 # Temporary an Alire issue workaround:
 git -C alire/cache/dependencies/vss*/ checkout config/vss_config.gpr
 # export LIBRARY_TYPE=static
+# On Mac OS X you should disable SAL (Standalone Libraries):
+# export STANDALONE=no
+# sed -i -e "/for Library_Interface use /s/^/--/" alire/cache/dependencies/langkit_support*/langkit/support/langkit_support.gpr
+# sed -i -e "/for Interfaces use /s/^/--/" alire/cache/dependencies/libadalang*/build/libadalang.gpr
+
 alr build -- -gnatwn
 ```
 
@@ -53,39 +58,40 @@ It supposes next packages are already installed:
 
     curl -fsSL https://raw.githubusercontent.com/reznikmm/als-alire-index/main/make_lsif.sh | bash
 
-## Build on Mac OS X High Sierra
+## Package VSCode extension to `.vsix`
+
+You need NodeJS 16. On Ubuntu install it this way:
+```
+apt install gcc g++ make
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
+apt-get install -y nodejs
+```
+
+You may want to change version (or CPU for AArch64) in the `package.json`:
+
+    sed -i -e s/x64/arm64/ -e s/23.0.999/23.0.18/ integration/vscode/ada/package.json
+
+You should have a copy of `ada_language_server` in `integration/vscode/ada/{linux,darwin,win32}/`.
+You need `vsce` and `esbuild`:
+```
+npm install -g @vscode/vsce
+npm install -g esbuild
+```
+
+Then you could do:
+```
+cd integration/vscode/ada
+npm install
+vsce package
+```
+
+## Build on Mac OS X
 
 You need [Python 3.8](https://www.python.org/downloads/macos/) or newer. Install and append it to `PATH` environment variable.
 
-You can use [GNAT CE 2021](https://github.com/simonjwright/distributing-gcc/releases/tag/gnat-ce-2021) to build ALS on Mac OS X older than Big Sur (11, Darwin 20).
+You need a GNAT compiler GCC 12 or newer.
 
-```
-curl -L -O https://github.com/simonjwright/distributing-gcc/releases/download/gnat-ce-2021/gnat-ce-2021-x86_64-apple-darwin15.pkg
-
-installer -pkg gnat-ce-2021-x86_64-apple-darwin15.pkg  -target CurrentUserHomeDirectory
-
-export PATH=$HOME/opt/gnat-ce-2021/bin:$PATH
-```
-
-Then you should uninstall conflicting packages:
-
-```
-for J in xmlada gnatcoll_iconv gpr langkit_support gnatcoll_gmp gnatcoll_sqlite2ada gnatcoll gnatcoll_syslog gnatcoll_sql aunit gnatcoll_python libadalang gnatcoll_xref gnatcoll_sqlite mains gnatcoll_readline
-do
-   gprinstall --uninstall $J
-done
-```
-
-Install `alire`:
-```
-curl -L -O https://github.com/alire-project/alire/releases/download/v1.1.1/alr-1.1.1-bin-x86_64-macos.zip
-
-unzip alr-1.1.1-bin-x86_64-macos.zip 
-
-export PATH=$PWD/bin:$PATH
-```
-
-You also need `wget` for `xmlada` crate. If you don't have `wget` this simple `curl` wrapper should work:
+You also need `wget` for `alr`. If you don't have `wget` this simple `curl` wrapper should work:
 ```
 cat > bin/wget <<\EOF
 #!/bin/bash
@@ -101,7 +107,7 @@ EOF
 chmod +x bin/wget
 ```
 
-After that `alr` should be able to build `ada_language_server`. The `alr` complains on absent `libgmp`, ignore it, because this "GNAT CE 2021" distribution has its-own copy of `libgmp` in `opt/gnat-ce-2021/lib/` directory.
+The `alr` complains on absent `libgmp`, so you need to find this library somewhere. For instance "GNAT CE 2021" distribution has its-own copy of `libgmp` in `opt/gnat-ce-2021/lib/` directory. Set `LIBRARY_PATH` environment to point to a directory with `libgmp`.
  After the build fix RPATH to the `libgmp.10.dylib`:
 
 ```
