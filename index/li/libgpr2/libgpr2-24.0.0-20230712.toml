@@ -1,0 +1,30 @@
+name = "libgpr2"
+description = "Parser for GPR Project files"
+version = "24.0.0-20230712"
+
+authors = ["AdaCore"]
+maintainers = ["Maxim Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "GPL-3.0-only WITH GCC-exception-3.1"
+website = "https://github.com/AdaCore/gpr"
+tags = ["gpr", "static-analysis"]
+project-files = ["gpr2.gpr"]
+
+[origin]
+url = "git+https://github.com/AdaCore/gpr"
+commit = "4c2aacd71d8cdb5ad8ad30c05e5ab2d6ee7a7920"
+
+[[actions]]
+type = "post-fetch"
+command = ["bash", "-c", "-x", "[ -d gprconfig_kb ] || git clone https://github.com/AdaCore/gprconfig_kb.git"]
+
+[[actions]]
+type = "post-fetch"
+command = ["sed", "-i.bak", "-E", "-e", "s/\\b(X?)BUILD\\b/\\1GPR2_BUILD/g", "Makefile", "gpr2.gpr", "bindings/c/gpr2-c.gpr"]
+
+[[actions]]
+type = "post-fetch"
+command = ["bash", "-c", "-x", "make setup .build/kb/config.kb GPR2KBDIR=./gprconfig_kb/db"]
+
+[[depends-on]]
+gnatcoll = "*"

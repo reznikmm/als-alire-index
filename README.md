@@ -20,8 +20,6 @@ git -C alire/cache/dependencies/vss*/ checkout config/vss_config.gpr
 # export LIBRARY_TYPE=static
 # On Mac OS X you should disable SAL (Standalone Libraries):
 # export STANDALONE=no
-# sed -i -e "/for Library_Interface use /s/^/--/" alire/cache/dependencies/langkit_support*/langkit/support/langkit_support.gpr
-# sed -i -e "/for Interfaces use /s/^/--/" alire/cache/dependencies/libadalang*/build/libadalang.gpr
 
 alr build -- -gnatwn
 ```
@@ -67,11 +65,16 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
 apt-get install -y nodejs
 ```
 
-You may want to change version (or CPU for AArch64) in the `package.json`:
+You may want to change version in the `package.json`:
 
-    sed -i -e s/x64/arm64/ -e s/23.0.999/23.0.18/ integration/vscode/ada/package.json
+    sed -i -e -e s/23.0.999/23.0.20/ integration/vscode/ada/package.json
 
-You should have a copy of `ada_language_server` in `integration/vscode/ada/{linux,darwin,win32}/`.
+Or add new platform to the list of supported platforms (like AArch64 Linux):
+
+    sed -e "/const supportedEnvs:/a{ arch: 'arm64', platform: 'linux' }," \
+      integration/vscode/ada/src/extension.ts
+
+You should have a copy of `ada_language_server` in `integration/vscode/ada/{amd64,arm64}/{linux,darwin,win32}/`.
 You need `vsce` and `esbuild`:
 ```
 npm install -g @vscode/vsce
@@ -87,7 +90,7 @@ vsce package
 
 ## Build on Mac OS X
 
-You need [Python 3.8](https://www.python.org/downloads/macos/) or newer. Install and append it to `PATH` environment variable.
+You need [Python 3.9/3.10](https://www.python.org/downloads/macos/) or newer. Install and append it to `PATH` environment variable.
 
 You need a GNAT compiler GCC 12 or newer.
 

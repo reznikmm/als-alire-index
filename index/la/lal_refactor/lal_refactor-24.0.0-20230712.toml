@@ -1,0 +1,22 @@
+name = "lal_refactor"
+description = "Source code refactoring tools for the Ada"
+version = "24.0.0-20230712"
+
+authors = ["AdaCore"]
+maintainers = ["Maxim Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "Apache-2.0"
+website = "https://github.com/AdaCore/lal-refactor"
+tags = ["static-analysis"]
+project-files = ["gnat/lal_refactor.gpr"]
+
+[origin]
+url = "git+https://github.com/AdaCore/lal-refactor"
+commit = "fbd0b0c6ff3a1d8ea9cf71ecff63554b6a11eeec"
+
+[[actions]]
+type = "post-fetch"
+command = ["bash", "-c", "-x", "echo hello!"]
+
+[[depends-on]]
+libadalang_tools = "*"
