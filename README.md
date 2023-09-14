@@ -15,8 +15,6 @@ alr index --add git+https://github.com/reznikmm/als-alire-index.git --name als
 alr toolchain --select
 alr get ada_language_server
 cd ada_language_server*
-# Temporary an Alire issue workaround:
-git -C alire/cache/dependencies/vss*/ checkout config/vss_config.gpr
 # export LIBRARY_TYPE=static
 # On Mac OS X you should disable SAL (Standalone Libraries):
 # export STANDALONE=no
