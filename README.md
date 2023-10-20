@@ -11,22 +11,16 @@ and dependenties not included in the community index yet.
 ```
 alr index --reset-community
 alr index --add git+https://github.com/reznikmm/als-alire-index.git --name als
-# Choose gnat_native=12.2
-alr toolchain --select
-alr get ada_language_server
-cd ada_language_server*
-# export LIBRARY_TYPE=static
-# On Mac OS X you should disable SAL (Standalone Libraries):
-# export STANDALONE=no
-
-alr build -- -gnatwn
+# Choose gnat_native=13.2:
+alr toolchain --select gnat_native^13 gprbuild
+LIBRARY_TYPE=static STANDALONE=no alr get --build ada_language_server
 ```
 
 After a successful build you will get `ada_language_server` executable:
 
 ```
-# ls -l ada_language_server_23.0.*/.obj/server/ada_language_server 
--rwxr-xr-x 1 root root 114655496 Nov  9 11:47 ada_language_server_23.0.1_7cc30d32/.obj/server/ada_language_server
+# ls -l ada_language_server_24.0.*/.obj/server/ada_language_server
+-rwxrwxr-x 1 reznik reznik 244378944 Oct 20 17:31 ada_language_server_24.0.1_d5ee2f18/.obj/server/ada_language_server
 ```
 
 ### Dependencies
@@ -36,12 +30,6 @@ Make sure you have [`alr`](https://alire.ada.dev/), `wget`, `curl`, `git`, `libg
 ```
 apt install wget curl git libgmp-dev python3 python3-venv python3-pip
 ```
-
-## GCC 13.1 preview
-
-You can install `gnat_native` of GCC 13.1 with the next commant:
-
-    alr toolchain --select gnat_native=13.1.1
 
 ## One line installer for `lsif-ada`
 
