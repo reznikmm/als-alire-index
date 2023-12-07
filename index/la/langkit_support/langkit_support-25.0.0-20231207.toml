@@ -1,0 +1,24 @@
+name = "langkit_support"
+description = "Runtime support library for Langkit-generated libraries"
+version = "25.0.0-20231207"
+
+authors = ["AdaCore"]
+maintainers = ["Pierre-Marie de Rodat <pmderodat@kawie.fr>"]
+maintainers-logins = ["pmderodat"]
+licenses = "Apache-2.0"
+website = "https://github.com/AdaCore/langkit"
+
+project-files = ["langkit/support/langkit_support.gpr"]
+
+[origin]
+url = "git+https://github.com/AdaCore/langkit"
+commit = "f658896058a1bdd0993b54577700233563cbf878"
+
+[[actions]]
+type = "post-fetch"
+command = ["bash", "-c", "-x", "rm -rf langkit/adasat && cp -r ${ADASAT_ALIRE_PREFIX} langkit/adasat"]
+
+[[depends-on]]
+gnatcoll = "*"
+gnatcoll_bindings = "*"
+adasat = "*"
