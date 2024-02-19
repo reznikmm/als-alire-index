@@ -1,6 +1,6 @@
 name = "adasat"
 description = "Implementation of a DPLL-based SAT solver in Ada."
-version = "25.0.0-20240130"
+version = "25.0.0-20240219"
 
 authors = ["AdaCore"]
 maintainers = ["Beguet Romain <beguet@adacore.com>"]

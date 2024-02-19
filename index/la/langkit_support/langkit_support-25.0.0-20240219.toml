@@ -1,6 +1,6 @@
 name = "langkit_support"
 description = "Runtime support library for Langkit-generated libraries"
-version = "25.0.0-20240130"
+version = "25.0.0-20240219"
 
 authors = ["AdaCore"]
 maintainers = ["Pierre-Marie de Rodat <pmderodat@kawie.fr>"]
@@ -12,7 +12,7 @@ project-files = ["langkit/support/langkit_support.gpr"]
 
 [origin]
 url = "git+https://github.com/AdaCore/langkit"
-commit = "8a980164b9ceae3944f5f77ff5b1b479f22a2b98"
+commit = "95f0819144e0eaa43019156d5b9dbccb11d2c49a"
 
 [[actions]]
 type = "post-fetch"
