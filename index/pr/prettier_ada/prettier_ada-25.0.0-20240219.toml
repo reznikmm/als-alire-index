@@ -1,6 +1,6 @@
 name = "prettier_ada"
 description = "A library to create formatters for any language."
-version = "25.0.0-20240130"
+version = "25.0.0-20240219"
 
 authors = ["AdaCore"]
 maintainers = ["João Azevedo <azevedo@adacore.com>"]
@@ -10,9 +10,9 @@ website = "https://github.com/AdaCore/prettier-ada"
 tags = ["format", "prettier"]
 
 [[depends-on]]
-gnatcoll         = "25.0.0-20231207"
-vss              = "25.0.0-20231207"
+gnatcoll         = "*"
+vss              = "*"
 
 [origin]
 url = "git+https://github.com/AdaCore/prettier-ada"
-commit = "1ebb91c8fe70dbb91a09aba5298d13175f1f68a8"
+commit = "7309bd715f3a0e836871c172f16d3fe070d9a125"
