@@ -1,0 +1,19 @@
+name = "markdown"
+description = "Markdown parser"
+version = "24.0.0-20240416"
+tags = ["markdown", "gfm", "commonmark"]
+
+authors = ["AdaCore"]
+maintainers = ["Max Reznik <reznik@adacore.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "Apache-2.0"
+
+configuration.disabled = true
+project-files = ["gnat/markdown.gpr"]
+
+[origin]
+commit = "88707c8d873a9abc170004e80a063dc31d404e5f"
+url = "git+https://github.com/AdaCore/markdown.git"
+
+[[depends-on]]
+vss = ">=24.0.0-20240416"
