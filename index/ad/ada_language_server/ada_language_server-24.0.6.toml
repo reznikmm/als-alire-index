@@ -1,0 +1,27 @@
+description = "An implementation of the Microsoft's Language Server Protocol for Ada"
+name = "ada_language_server"
+version = "24.0.6"
+website = "https://github.com/AdaCore/ada_language_server"
+authors = ["AdaCore"]
+licenses = "GPL-3.0-only"
+maintainers = ["Maxim Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+project-files = ["gnat/lsp_server.gpr"]
+tags = ["lsp", "vscode"]
+
+[environment]
+ADA_PROJECT_PATH.set= "${CRATE_ROOT}/subprojects/stubs"
+
+[[depends-on]]
+gnatcoll         = "25.0.0-20240612"
+libadalang       = "25.0.0-20240612"
+libgpr2          = "25.0.0-20240612"
+vss              = "25.0.0-20240612"
+libadalang_tools = "25.0.0-20240612"
+lal_refactor     = "25.0.0-20240612"
+gnatdoc          = "25.0.0-20240612"
+spawn            =  "1.1.0-20240612"
+
+[origin]
+url = "git+https://github.com/AdaCore/ada_language_server"
+commit = "9eae1b31873478412c8d4ba8a8ceb1fd2f8bd36e"
