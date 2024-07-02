@@ -11,8 +11,8 @@ and dependenties not included in the community index yet.
 ```
 alr index --reset-community
 alr index --add git+https://github.com/reznikmm/als-alire-index.git --name als
-# Choose gnat_native=13.2:
-alr toolchain --select gnat_native^13 gprbuild
+# Choose gnat_native=14.1:
+alr toolchain --select gnat_native^14 gprbuild
 LIBRARY_TYPE=static STANDALONE=no alr get --build ada_language_server
 ```
 
