@@ -1,0 +1,40 @@
+name = "gnat_native"
+version = "14.2.1"
+provides = ["gnat=14.2.1"]
+description = "The GNAT Ada compiler - Native"
+maintainers = ["chouteau@adacore.com"]
+maintainers-logins = ["Fabien-Chouteau"]
+licenses = "GPL-3.0-or-later AND GPL-3.0-or-later WITH GCC-exception-3.1"
+
+auto-gpr-with = false
+
+[configuration]
+disabled = true
+
+[environment]
+PATH.prepend = "${CRATE_ROOT}/bin"
+
+[origin."case(os)".linux."case(host-arch)".aarch64]
+binary = true
+url = "https://github.com/reznikmm/GNAT-FSF-builds/releases/download/gnat-14.2.0-1/gnat-aarch64-linux-14.2.0-1.tar.gz"
+hashes = ["sha256:dc6f83449fd73c84102085b077820029c6d7b8307e2474a97457d942ccb20b00"]
+
+[origin."case(os)".linux."case(host-arch)".x86-64]
+binary = true
+url = "https://github.com/reznikmm/GNAT-FSF-builds/releases/download/gnat-14.2.0-1/gnat-x86_64-linux-14.2.0-1.tar.gz"
+hashes = ["sha256:372d97cb4e7b4e95996505dc92c78bc51b5ba394db57e2ba74e63a435b04959e"]
+
+[origin."case(os)".windows."case(host-arch)".x86-64]
+binary = true
+url = "https://github.com/reznikmm/GNAT-FSF-builds/releases/download/gnat-14.2.0-1/gnat-x86_64-windows64-14.2.0-1.tar.gz"
+hashes = ["sha256:dd27f00ce07c60f90949cd9bf0372442bd92e7a083a47988bc51c4211399aca0"]
+
+[origin."case(os)".macos."case(host-arch)".x86-64]
+binary = true
+url = "https://github.com/reznikmm/GNAT-FSF-builds/releases/download/gnat-14.2.0-1/gnat-x86_64-darwin-14.2.0-1.tar.gz"
+hashes = ["sha256:c450c021822397d007ffec870d1ff76c5d688d5d0f8149c2ee8d8d457a93ce0f"]
+
+[origin."case(os)".macos."case(host-arch)".aarch64]
+binary = true
+url = "https://github.com/reznikmm/GNAT-FSF-builds/releases/download/gnat-14.2.0-1/gnat-aarch64-darwin-14.2.0-1.tar.gz"
+hashes = ["sha256:0b075ad6aa6a0dd5d74d94d32e0f8be0b953526a39faa8aaf10a6aff71931abf"]
