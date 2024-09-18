@@ -2,9 +2,22 @@
 
 > An Alire index to build ada_language_server, lsif-ada
 
+# THE PROJECT IS ARCHIVED!!!
+
+I'm closing the project since AdaCore includes `build_als.sh` script into
+[ada_language_server](https://github.com/AdaCore/ada_language_server) repository. See
+[the instructions for building](https://github.com/AdaCore/ada_language_server/blob/master/doc/build.md)
+ALS from sources.
+
+The last version of ALS in this repo is `24.0.6`.
+Next version is `25.0.20240915` (versioning schema is changed).
+Now it's very hard (impossible?) to build Libadalang from sources by just running `alr`, especially with `LIBRARY_TYPE=static`, because LAL generation phase is
+required dynamic libraries.
+
+## Archived README
 This alire index provides the `ada_language_server`,
 `lsif_ada` crates
-and dependenties not included in the community index yet.
+and dependencies not included in the community index yet.
 
 ## Install
 
